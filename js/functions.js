@@ -2,12 +2,7 @@
 
 $(document).ready(function(){
 
-
-	// Typewrite
-	
-
-
-
+// Typescript
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -136,10 +131,58 @@ var TxtType = function(el, toRotate, period) {
   		})
 	});
 
-
 	
 
+	// $('.imgModal').click(function(){
+	// 	swal({
+	// 		title: 'Imagem no modal do Sweet Alert',
+	// 		text: 'Modal with a custom image.',
+	// 		imageUrl: 'img/portfolio-1.jpg',
+	// 		imageWidth: 600,
+	// 		imageHeight: 300,
+	// 		imageAlt: 'teste',
+	// 		animation: false
+	// 	})
+	// });
 
+	// $('.imgModal2').click(function(){
+	// 	swal({
+	// 		title: 'Imagem no modal do Sweet Alert2',
+	// 		text: 'Modal with a custom image.',
+	// 		imageUrl: 'img/portfolio-1.jpg',
+	// 		imageWidth: 600,
+	// 		imageHeight: 300,
+	// 		imageAlt: 'teste',
+	// 		animation: false
+	// 	})
+	// });
+
+
+	// EFEITO ANCORA SUAVE
+	var $doc = $('html, body');
+	$('.scrollSuave').click(function() {
+		$doc.animate({
+			scrollTop: $( $.attr(this, 'href') ).offset().top
+		}, 500);
+		return false;
+	});
+
+
+
+	//EFEITO PARALAX
+
+	$('.bgParallax').each(function(){
+		var $obj = $(this);
+
+		$(window).scroll(function() {
+			var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+
+			var bgpos = '50% '+ yPos + 'px';
+
+			$obj.css('background-position', bgpos );
+
+		}); 
+	});
 	
 
 

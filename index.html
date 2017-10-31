@@ -36,7 +36,7 @@
     <script src="js/functions.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
 
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script> -->
@@ -50,10 +50,11 @@
          <nav>
              <a href="#">Testando Flexbox </a>
              <ul>
-                 <li><a class="linkMenu" href="#sobre">SOBRE</a></li>
-                 <li><a class="linkMenu" href="#servicos">SERVIÇOS</a></li>
-                 <li><a class="linkMenu" href="#portfolio">PORTFÓLIO</a></li>
-                 <li><a class="linkMenu" href="#contato">CONTATO</a></li>
+                 <li><a class="linkMenu scrollSuave" href="#sobre">SOBRE</a></li>
+                 <li><a class="linkMenu scrollSuave" href="#servicos">SERVIÇOS</a></li>
+                 <li><a class="linkMenu scrollSuave" href="#portfolio">PORTFÓLIO</a></li>
+                 <li><a class="linkMenu scrollSuave" href="#newsletter">NEWSLETTER</a></li>
+                 <li><a class="linkMenu scrollSuave" href="#contato">CONTATO</a></li>
              </ul>
          </nav>
      </div>
@@ -61,8 +62,8 @@
 
 
      <!-- CONTEUDO DO SITE -->
-     <header>
-        <h1 id="frase_dinamica" class="typewrite" data-period="2000" data-type='[ "Bem vindo ao site de testes.", "Criador: Fabrício Fernandes Ziliotti" ]'>
+     <header class="bgParallax" data-speed="15">
+        <h1 id="frase_dinamica" class="typewrite" data-period="2000" data-type='[ "Bem vindo ao site de testes.", "Criador:Fabrício Ziliotti" ]'>
             <span class="wrap"></span>
         </h1>
        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
@@ -70,16 +71,9 @@
 
      </header>
 
-    <section id="sobre">
-        <h2>SOBRE</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
-        <a class="botao btnError">ALERT ERROR</a>
-        <br>
-        <a class="botao btnConfirm">ALERT Confirm</a>
-    </section>
 
-
-
+   
+ 
 
     <section id="servicos">
         <h2>SERVIÇOS</h2>
@@ -105,15 +99,40 @@
         </div>
     </section>
 
+
+    <section id="sobre" class="bgParallax" data-speed="15">
+        <h2>SOBRE</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
+        <a class="botao btnError">ALERT ERROR</a>
+        <br>
+        <a class="botao btnConfirm">ALERT Confirm</a>
+    </section>
+
+
     <section id="portfolio">
         <h2>PORTFÓLIO</h2>
-        <img src="img/portfolio-1.jpg" alt="cogumelos">
-        <img src="img/portfolio-2.jpeg" alt="Sol no horizonte">
+        <img class="imgModal" src="img/portfolio-1.jpg" alt="cogumelos">
+        <img class="imgModal2"   src="img/portfolio-2.jpeg" alt="Sol no horizonte">
         <img src="img/portfolio-3.jpeg" alt="Pessoas à beira de vale">
         <img src="img/portfolio-4.jpg" alt="Floresta nevada">
         <img src="img/portfolio-5.jpeg" alt="Praia deserta">
         <img src="img/portfolio-6.jpeg" alt="Alce à beira de rio">
     </section>
+
+
+    <section id="newsletter" class="bgParallax" data-speed="15">
+            <form action="" method=""> 
+                <h2>Receba Notícias</h2>
+                <p> 
+                    <label class="lbl">E-mail:</label>
+                    <input type="email" size="35" name="email" placeholder=" Digite seu email">      
+                </p>   
+         
+               <a class="botao btnConfirm">ALERT Confirm</a>
+         
+       </form>
+    </section>
+
 
     <section id="contato">
         <h2>CONTATO</h2>
@@ -129,7 +148,7 @@
         </div>
     </section>
 
-
+    
 
     <!-- RODAPE DO SITE -->
     <footer>
