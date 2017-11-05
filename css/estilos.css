@@ -32,9 +32,7 @@ a {
 body {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     color: #4d4d4d;
-    overflow: visible;
-    
-    
+    overflow: visible; 
 }
 
 h1, h2, h3 {
@@ -224,7 +222,7 @@ Newsletter
     background-position: center;
     background-repeat: repeat;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: justify;
     padding-top: 40px;
@@ -233,6 +231,7 @@ Newsletter
 }
 
 #newsletter form {
+    margin: 0 auto;
     background: #2f2f2f;
     opacity: 0.92;
     border-radius: 15px;

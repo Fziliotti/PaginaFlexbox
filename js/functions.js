@@ -80,6 +80,13 @@ var TxtType = function(el, toRotate, period) {
 	});
 
 
+
+
+	
+
+	
+
+
  	// BOTOES COM ALERTAS DO SWEET ALERT2
 
 	$('.btnSucess').click(function(){
