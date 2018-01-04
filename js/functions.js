@@ -1,64 +1,65 @@
 
 
 $(document).ready(function(){
+	// TYPESCRIPT
+	var TxtType = function(el, toRotate, period) {
+		this.toRotate = toRotate;
+		this.el = el;
+		this.loopNum = 0;
+		this.period = parseInt(period, 10) || 2000;
+		this.txt = '';
+		this.tick();
+		this.isDeleting = false;
+	};
 
-// Typescript
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
+	TxtType.prototype.tick = function() {
+		var i = this.loopNum % this.toRotate.length;
+		var fullTxt = this.toRotate[i];
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+		if (this.isDeleting) {
+			this.txt = fullTxt.substring(0, this.txt.length - 1);
+		} else {
+			this.txt = fullTxt.substring(0, this.txt.length + 1);
+		}
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+		this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+		var that = this;
+		var delta = 200 - Math.random() * 100;
 
-        var that = this;
-        var delta = 200 - Math.random() * 100;
+		if (this.isDeleting) { delta /= 2; }
 
-        if (this.isDeleting) { delta /= 2; }
+		if (!this.isDeleting && this.txt === fullTxt) {
+			delta = this.period;
+			this.isDeleting = true;
+		} else if (this.isDeleting && this.txt === '') {
+			this.isDeleting = false;
+			this.loopNum++;
+			delta = 500;
+		}
 
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
+		setTimeout(function() {
+			that.tick();
+		}, delta);
+	};
 
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
+	window.onload = function() {
+		var elements = document.getElementsByClassName('typewrite');
+		for (var i=0; i<elements.length; i++) {
+			var toRotate = elements[i].getAttribute('data-type');
+			var period = elements[i].getAttribute('data-period');
+			if (toRotate) {
+				new TxtType(elements[i], JSON.parse(toRotate), period);
+			}
+		}
         // INJECT CSS
         var css = document.createElement("style");
         css.type = "text/css";
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000}";
         document.body.appendChild(css);
     };
+
+    // </TYPESCRIPT>
 
 
 	//***********************SCROLLTOTOP*********************//
@@ -89,43 +90,43 @@ var TxtType = function(el, toRotate, period) {
 
  	// BOTOES COM ALERTAS DO SWEET ALERT2
 
-	$('.btnSucess').click(function(){
-		swal({
-			type: 'success',
-			title: 'Your work has been saved',
-			showConfirmButton: false,
-			timer: 1500
-		})
-	});
+ 	$('.btnSucess').click(function(){
+ 		swal({
+ 			type: 'success',
+ 			title: 'Your work has been saved',
+ 			showConfirmButton: false,
+ 			timer: 1500
+ 		})
+ 	});
 
-	$('.btnError').click(function(){
-		swal(
-			'Oops...',
-			'Something went wrong!',
-			'error'
-			)
-	});
+ 	$('.btnError').click(function(){
+ 		swal(
+ 			'Oops...',
+ 			'Something went wrong!',
+ 			'error'
+ 			)
+ 	});
 
-	$('.btnConfirm').click(function(){
-		swal({
-		  title: 'Are you sure?',
-		  text: "You won't be able to revert this!",
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Yes, delete it!',
-		  cancelButtonText: 'No, cancel!',
-		  confirmButtonClass: 'botao',
-		  cancelButtonClass: 'botao',
-		  buttonsStyling: false
-		}).then(function () {
-		  swal(
-		    'Deleted!',
-		    'Your file has been deleted.',
-		    'success'
-		  )
-		}, function (dismiss) {
+ 	$('.btnConfirm').click(function(){
+ 		swal({
+ 			title: 'Are you sure?',
+ 			text: "You won't be able to revert this!",
+ 			type: 'warning',
+ 			showCancelButton: true,
+ 			confirmButtonColor: '#3085d6',
+ 			cancelButtonColor: '#d33',
+ 			confirmButtonText: 'Yes, delete it!',
+ 			cancelButtonText: 'No, cancel!',
+ 			confirmButtonClass: 'botao',
+ 			cancelButtonClass: 'botao',
+ 			buttonsStyling: false
+ 		}).then(function () {
+ 			swal(
+ 				'Deleted!',
+ 				'Your file has been deleted.',
+ 				'success'
+ 				)
+ 		}, function (dismiss) {
 		  // dismiss can be 'cancel', 'overlay',
 		  // 'close', and 'timer'
 		  if (dismiss === 'cancel') {
@@ -135,10 +136,10 @@ var TxtType = function(el, toRotate, period) {
 		  		'error'
 		  		)
 		  }
-  		})
-	});
+		})
+ 	});
 
-	
+
 
 	// $('.imgModal').click(function(){
 	// 	swal({
@@ -165,11 +166,13 @@ var TxtType = function(el, toRotate, period) {
 	// });
 
 
-	// EFEITO ANCORA SUAVE
+	// EFEITO ANCORA SUAVE o -70 serve para ajustar na tela
+
+
 	var $doc = $('html, body');
 	$('.scrollSuave').click(function() {
 		$doc.animate({
-			scrollTop: $( $.attr(this, 'href') ).offset().top
+			scrollTop: $( $.attr(this, 'href') ).offset().top 
 		}, 500);
 		return false;
 	});
