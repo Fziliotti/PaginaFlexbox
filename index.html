@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Codificação caracteres da página -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="UTF-8">
-    <!-- SEO Geral -->
-    <title>Fziliotti - Pagina Flexbox</title>
-    <meta name="description" content="Usando flexbox para criação de layouts da página. Uso do padrão Mobile First. ">
-    <!-- <link rel="canonical" href="Link único da página"> -->
-    <meta name="author" content="Fabricio Ziliotti">
-    <meta name="robots" content="index">
+	<!-- Codificação caracteres da página -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8">
+	<!-- SEO Geral -->
+	<title>Fziliotti - Pagina Flexbox</title>
+	<meta name="description" content="Usando flexbox para criação de layouts da página. Uso do padrão Mobile First. ">
+	<!-- <link rel="canonical" href="Link único da página"> -->
+	<meta name="author" content="Fabricio Ziliotti">
+	<meta name="robots" content="index">
 
-    <!-- Open Graph Facebook -->
-    <meta property="og:title" content="Fziliotti - Pagina Flexbox">
-    <meta property="og:description" content="Usando flexbox para criação de layouts da página. Uso do padrão Mobile First."/>
-    <!-- <meta property="og:url" content="Link da página"> -->
-    <meta property="og:site_name" content="Fziliotti - Pagina Flexbox"/>
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://exemplo.com/imagem.png">
-    
-    <!-- Twitter -->
-    <meta name="twitter:title" content="Título da página">
-    <meta name="twitter:description" content="Descrição da página em menos de 200 caracteres.">
-    <meta name="twitter:url" content="Link da página">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://exemplo.com/imagem.png">
-    <!-- <meta name="twitter:creator" content="@estevanmaito"> -->
-    <meta name="twitter:site" content="@empresa">
+	<!-- Open Graph Facebook -->
+	<meta property="og:title" content="Fziliotti - Pagina Flexbox">
+	<meta property="og:description" content="Usando flexbox para criação de layouts da página. Uso do padrão Mobile First."/>
+	<!-- <meta property="og:url" content="Link da página"> -->
+	<meta property="og:site_name" content="Fziliotti - Pagina Flexbox"/>
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://exemplo.com/imagem.png">
 
-     <!-- Importação de bibliotecas e arquivos -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/estilos.css">
-    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
+	<!-- Twitter -->
+	<meta name="twitter:title" content="Título da página">
+	<meta name="twitter:description" content="Descrição da página em menos de 200 caracteres.">
+	<meta name="twitter:url" content="Link da página">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:image" content="https://exemplo.com/imagem.png">
+	<!-- <meta name="twitter:creator" content="@estevanmaito"> -->
+	<meta name="twitter:site" content="@empresa">
+
+	<!-- Importação de bibliotecas e arquivos -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
 
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
@@ -43,133 +43,132 @@
     <script src="sketch.js"></script> -->
 
 </head>
-  
+
 <body>
 
-     <!-- MENU DO TOPO -->
-     <div id="topo">
-         <nav>
-             <a href="#">Testando Flexbox </a>
-             <ul>
-                 <li><a class="linkMenu scrollSuave" href="#sobre">SOBRE</a></li>
-                 <li><a class="linkMenu scrollSuave" href="#servicos">SERVIÇOS</a></li>
-                 <li><a class="linkMenu scrollSuave" href="#portfolio">PORTFÓLIO</a></li>
-                 <li><a class="linkMenu scrollSuave" href="#newsletter">NEWSLETTER</a></li>
-                 <li><a class="linkMenu scrollSuave" href="#contato">CONTATO</a></li>
-             </ul>
-         </nav>
-     </div>
-     <!-- </MENUTOPO> -->
+	<!-- MENU DO TOPO -->
+	<div id="topo">
+		<!-- Usa-se NAV para dar maior semantica para o robô do motor de busca verificar com maior eficiencia -->
+		<nav>
+			<a href="#">Site FlexBox</a>
+			<ul>
+				<li><a title="Sobre o site" class="linkMenu scrollSuave" href="#sobre">SOBRE</a></li>
+				<li><a title="Serviços do site" class="linkMenu scrollSuave" href="#servicos">SERVIÇOS</a></li>
+				<li><a title="Portfolio do desenvolvedor" class="linkMenu scrollSuave" href="#portfolio">PORTFÓLIO</a></li>
+				<li><a title="Receba notícias do site" class="linkMenu scrollSuave" href="#newsletter">NEWSLETTER</a></li>
+				<li><a title="Contato com o site" class="linkMenu scrollSuave" href="#contato">CONTATO</a></li>
+			</ul>
+		</nav>
+	</div>
+	<!-- </MENUTOPO> -->
 
 
-     <!-- CONTEUDO DO SITE -->
-     <header class="bgParallax" data-speed="15">
-        <h1 id="frase_dinamica" class="typewrite" data-period="2000" data-type='[ "Bem vindo ao site de testes.", "Criador:Fabrício Ziliotti" ]'>
-            <span class="wrap"></span>
-        </h1>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
-       <a class="botao btnSucess">ALERT SUCESS</a>
+	<!-- CONTEUDO DO SITE -->
+	<main>
 
-     </header>
-
-
-   
- 
-
-    <section id="servicos">
-        <h2>SERVIÇOS</h2>
-        <div>
-            <img src="img/configs.png" alt="Engrenagens">
-            <h3>Fácil Integração</h3>
-            <p>Integra facilmente seu site a qualquer gerenciador de conteúdo.</p>
-        </div>
-        <div>
-            <img src="img/hospedagem.png" alt="Servidor">
-            <h3>Hospedagem Moderna</h3>
-            <p>Não deixe seus clientes na mão. Tenha seu site 24hrs no ar.</p>
-        </div>
-        <div>
-            <img src="img/site.png" alt="Navegador">
-            <h3>Melhores Práticas</h3>
-            <p>Código legível, desenvolvido com as melhores práticas.</p>
-        </div>
-        <div>
-            <img src="img/coracao.png" alt="Coração">
-            <h3>Feito com Amor</h3>
-            <p>É melhor fazer seus sites com amor hoje em dia!</p>
-        </div>
-    </section>
+		<header class="bgParallax" data-speed="15">
+			<h1 id="frase_dinamica" class="typewrite" data-period="2000" data-type='[ "Bem vindo ao site de testes.", "Criador:Fabrício Ziliotti" ]'>
+				<span class="wrap"></span>
+			</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
+			<a class="botao btnSucess">ALERT SUCESS</a>
+		</header>
 
 
-    <section id="sobre" class="bgParallax" data-speed="15">
-        <h2>SOBRE</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
-        <a class="botao btnError">ALERT ERROR</a>
-        <br>
-        <a class="botao btnConfirm">ALERT Confirm</a>
-    </section>
+
+		<section id="servicos">
+			<h2>SERVIÇOS</h2>
+			<div>
+				<img src="img/configs.png" alt="Engrenagens">
+				<h3>Fácil Integração</h3>
+				<p>Integra facilmente seu site a qualquer gerenciador de conteúdo.</p>
+			</div>
+			<div>
+				<img src="img/hospedagem.png" alt="Servidor">
+				<h3>Hospedagem Moderna</h3>
+				<p>Não deixe seus clientes na mão. Tenha seu site 24hrs no ar.</p>
+			</div>
+			<div>
+				<img src="img/site.png" alt="Navegador">
+				<h3>Melhores Práticas</h3>
+				<p>Código legível, desenvolvido com as melhores práticas.</p>
+			</div>
+			<div>
+				<img src="img/coracao.png" alt="Coração">
+				<h3>Feito com Amor</h3>
+				<p>É melhor fazer seus sites com amor hoje em dia!</p>
+			</div>
+		</section>
 
 
-    <section id="portfolio">
-        <h2>PORTFÓLIO</h2>
-        <img class="imgModal" src="img/portfolio-1.jpg" alt="cogumelos">
-        <img class="imgModal2"   src="img/portfolio-2.jpeg" alt="Sol no horizonte">
-        <img src="img/portfolio-3.jpeg" alt="Pessoas à beira de vale">
-        <img src="img/portfolio-4.jpg" alt="Floresta nevada">
-        <img src="img/portfolio-5.jpeg" alt="Praia deserta">
-        <img src="img/portfolio-6.jpeg" alt="Alce à beira de rio">
-    </section>
+		<section id="sobre" class="bgParallax" data-speed="15">
+			<h2>SOBRE</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
+			<a class="botao btnError">ALERT ERROR</a>
+			<br>
+			<a class="botao btnConfirm">ALERT Confirm</a>
+		</section>
 
 
-    <section id="newsletter" class="bgParallax" data-speed="15">
-        <form action="" method=""> 
-            <h2>Receba Notícias</h2>
-            <p> 
-                <label class="lbl">E-mail:</label>
-                <input type="email" size="35" name="email" placeholder=" Digite seu email">      
-            </p>   
-            <a class="botao btnConfirm">ALERT Confirm</a>
-            <br>
-            <hr>
-            <br>
-            <h2>Testando AJAX</h2>
-          
-
-            <a class="botao btnConfirm">ALERT Confirm</a>
-        </form>
-       
-    </section>
+		<section id="portfolio">
+			<h2>PORTFÓLIO</h2>
+			<img class="imgModal" src="img/portfolio-1.jpg" alt="cogumelos">
+			<img class="imgModal2"   src="img/portfolio-2.jpeg" alt="Sol no horizonte">
+			<img src="img/portfolio-3.jpeg" alt="Pessoas à beira de vale">
+			<img src="img/portfolio-4.jpg" alt="Floresta nevada">
+			<img src="img/portfolio-5.jpeg" alt="Praia deserta">
+			<img src="img/portfolio-6.jpeg" alt="Alce à beira de rio">
+		</section>
 
 
-    <section id="contato">
-        <h2>CONTATO</h2>
-        <p>Entre em contato conosco.</p>
-        <div>
-            <img src="img/fone.png" alt="fone">
-            <p><a href="tel:xx55555555">(xx) 5555 5555</a></p>
-        </div>
+		<section id="newsletter" class="bgParallax" data-speed="15">
+			<form action="" method=""> 
+				<h2>Receba Notícias</h2>
+				<p> 
+					<label class="lbl">E-mail:</label>
+					<input type="email" size="35" name="email" placeholder=" Digite seu email">      
+				</p>   
+				<a class="botao btnConfirm">ALERT Confirm</a>
+				<br>
+				<hr>
+				<br>
+				<h2>Testando AJAX</h2>
+				<a class="botao btnConfirm">ALERT Confirm</a>
+			</form>
 
-        <div>
-            <img src="img/contato.png" alt="email">
-            <p><a href="mailto:email@contato.com">email@contato.com</a></p>
-        </div>
-    </section>
+		</section>
 
-    
 
-    <!-- RODAPE DO SITE -->
-    <footer>
-        <p>Desenvolvido por Fabrício Ziliotti.</p>
-    </footer>
- 
-    
-    <div class="botaoTopo">
-         <img src="img/scrolltotop.png" alt="scrolltotop">
-    </div>
+		<section id="contato">
+			<h2>CONTATO</h2>
+			<p>Entre em contato conosco.</p>
+			<div>
+				<img src="img/fone.png" alt="fone">
+				<p><a href="tel:xx55555555">(xx) 5555 5555</a></p>
+			</div>
 
-  
+			<div>
+				<img src="img/contato.png" alt="email">
+				<p><a href="mailto:email@contato.com">email@contato.com</a></p>
+			</div>
+		</section>
 
-    <!-- </Rodape> -->
+	</main>
+
+
+	<!-- RODAPE DO SITE -->
+	<footer>
+		<p>Desenvolvido por Fabrício Ziliotti.</p>
+	</footer>
+
+
+	<div class="botaoTopo">
+		<img src="img/scrolltotop.png" alt="scrolltotop">
+	</div>
+
+
+
+	<!-- </Rodape> -->
 </body>
 
 </html>
